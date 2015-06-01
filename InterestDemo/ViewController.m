@@ -143,10 +143,12 @@
                     yoffset = yoffset+40;
                 }
             }
-            UIImage *image;
             NSString *sel = subcat[i][@"selected"];
             NSString *key =subcat[i][@"key"];
             NSLog(@"key = %@",key);
+            
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            UIImage *image;
             if(![sel boolValue])
             {
                 image = [UIImage imageNamed: @"uncheck_box.png"];
@@ -155,30 +157,40 @@
             {
                 image = [UIImage imageNamed: @"check_box.png"];
             }
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,40,20,20)];
+            [imageView setImage:image];
+            //imageView.userInteractionEnabled = YES;
             
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.tag= [key integerValue];
             
-            [button setTitle:@"" forState:UIControlStateNormal];
-            [button setImage:image forState:normal];
-            
-            button.frame = CGRectMake(25+xoffset,40+yoffset,20,20);
-            [button addTarget:self action:@selector(CheckAction:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.ContainerView addSubview:button];
-            
-            NSLog(@"%@",subcat[1][@"value"]);
             UILabel *lbl1 = [[UILabel alloc] init];
             [lbl1 setFrame:CGRectMake(0,5,100,20)];
             lbl1.backgroundColor=[UIColor clearColor];
             lbl1.textColor=[UIColor blackColor];
-            lbl1.userInteractionEnabled=YES;
-            lbl1.tag=1;
-            lbl1.frame = CGRectMake(50+xoffset,yoffset,100,100);
-            [cell.ContainerView addSubview:lbl1];
-            
-            
-            
+            lbl1.frame = CGRectMake(30,0,100,100);
             lbl1.text= subcat[i][@"value"];
+            //lbl1.userInteractionEnabled = YES;
+            
+            //[cell.ContainerView addSubview:lbl1];
+            
+             button.tag= [key integerValue];
+            button.backgroundColor = [UIColor redColor];
+            [button setTitle:@"" forState:UIControlStateNormal];
+            //[button setImage:image forState:normal];
+            
+            button.frame = CGRectMake(25+xoffset,yoffset,120,120);
+            [button addTarget:self action:@selector(CheckAction:) forControlEvents:UIControlEventTouchUpInside];
+            [button addSubview:lbl1];
+            [button addSubview:imageView];
+            [cell.ContainerView addSubview:button];
+            //[lbl1 bringSubviewToFront:button];
+            //[imageView bringSubviewToFront:button];
+            NSLog(@"%@",subcat[1][@"value"]);
+            
+            
+            
+            
+            
+            
             NSLog(@"x=%d,y=%d,w=%d,h=%d",20+xoffset,0+yoffset,20,20);
         }
     //}
@@ -329,7 +341,7 @@
         }
     }
     NSLog(@"sender = %@",dict);
-    [sender setImage:image forState:normal];
+    NSLog(@"%@",sender.imageView.image);
 }
 
 @end
