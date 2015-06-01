@@ -43,10 +43,18 @@
 {
     //NSString *category= (NSString *)[self.itemsInTable objectAtIndex:indexPath.row];
     //NSLog(@"indexpath= %@\n %@",indexPath,category);
-    NSArray *count=self.itemsInTable;
+    NSMutableArray *subcat =[[NSMutableArray alloc] init];
+    NSArray *keys = [cat allKeys];
+    id aKey = [keys objectAtIndex:indexPath.row];
+    subcat = [cat objectForKey:aKey];
+    
+    NSArray *count=(NSArray *)subcat;
+    //NSDictionary *subcat =  cat;
+    NSLog(@"Total subcat = %lu\n subcat =%@\n",(unsigned long)count.count,subcat);
+    
     int total = (int)count.count;
-    //NSLog(@"%d",total);
-    int fix = 70;
+    NSLog(@"Total No. Elements %d",total);
+    int fix = 60;
     int offset = 60;
     int send;
     if(total==0)
