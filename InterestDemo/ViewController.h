@@ -22,7 +22,7 @@
 //@property(nonatomic,retain)NSMutableDictionary *category;
 @property (weak, nonatomic) IBOutlet UITableView *Mytabelview;
 @property(weak,nonatomic) NSIndexPath *previousIndexpath;
-
+@property (nonatomic, retain) NSMutableArray *isClickedArray;
 
 
 @end

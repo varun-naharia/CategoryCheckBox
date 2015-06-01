@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController
-@synthesize dict,cat,selectedcell,previousselectedcell,collapse,previousIndexpath;
+@synthesize dict,cat,selectedcell,previousselectedcell,collapse,previousIndexpath,isClickedArray;
 - (void)viewDidLoad {
     [super viewDidLoad];
     previousselectedcell=-1;
@@ -28,6 +28,12 @@
     self.itemsInTable=[[NSMutableArray alloc] init];
     [self.itemsInTable addObjectsFromArray:self.items];
     self.fruits = @[@"Apple", @"Pineapple", @"Orange", @"Banana", @"Pear", @"Kiwi", @"Strawberry", @"Mango", @"Walnut", @"Apricot", @"Tomato", @"Almond", @"Date", @"Melon", @"Water Melon", @"Lemon", @"Blackberry", @"Coconut", @"Fig", @"Passionfruit", @"Star Fruit"];
+    
+    self.isClickedArray = [[NSMutableArray alloc] initWithCapacity:(int)self.itemsInTable.count];
+    for(int i=0; i< self.itemsInTable.count;i++)
+    {
+        [self.isClickedArray addObject:[NSNumber numberWithBool:NO]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,15 +72,15 @@
         send = fix+(offset*(total/2));
     }
     
-    NSLog(@"indexrow = %ld \n pre = %d\n sel = %d \n",(long)[indexPath row],previousselectedcell,selectedcell);
-    if([indexPath row] == previousselectedcell)
+    //NSLog(@"indexrow = %ld \n pre = %d\n sel = %d \n",(long)[indexPath row],previousselectedcell,selectedcell);
+    if([[self.isClickedArray objectAtIndex:indexPath.row] boolValue] == YES)
     {
-        return 60;
+        return  send;
     }
-    else if ([indexPath row] == selectedcell) {
+    /*else if ([indexPath row] == selectedcell) {
        
             return  send;
-    }
+    }*/
     else
     {
         return 60;
@@ -139,7 +145,8 @@
             }
             UIImage *image;
             NSString *sel = subcat[i][@"selected"];
-            NSLog(@"sel = %@",sel);
+            NSString *key =subcat[i][@"key"];
+            NSLog(@"key = %@",key);
             if(![sel boolValue])
             {
                 image = [UIImage imageNamed: @"uncheck_box.png"];
@@ -150,10 +157,13 @@
             }
             
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            //[button addTarget:self action:@selector(aMethod:) forControlEvents:UIControlEventTouchUpInside];
+            button.tag= [key integerValue];
+            
             [button setTitle:@"" forState:UIControlStateNormal];
             [button setImage:image forState:normal];
+            
             button.frame = CGRectMake(25+xoffset,40+yoffset,20,20);
+            [button addTarget:self action:@selector(CheckAction:) forControlEvents:UIControlEventTouchUpInside];
             [cell.ContainerView addSubview:button];
             
             NSLog(@"%@",subcat[1][@"value"]);
@@ -190,7 +200,27 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([collapse isEqualToString:@"true"])
+    InterestTableViewCell *cell = (InterestTableViewCell *) [tableView cellForRowAtIndexPath:indexPath];
+    
+    // Cell is OPEN -> CLOSED
+    if ([[self.isClickedArray objectAtIndex:indexPath.row] boolValue] == YES) {
+        [self.isClickedArray replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
+        cell.ContainerView.hidden = YES;
+        UIImage *image = [UIImage imageNamed: @"list_right_arrow.png"];
+        [cell.image setImage:image];
+    }
+    // Cell is CLOSED -> OPEN
+    else {
+        [self.isClickedArray replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
+        cell.ContainerView.hidden = NO;
+        UIImage *image = [UIImage imageNamed: @"list_down_arrow.png"];
+        [cell.image setImage:image];
+    }
+    
+    [tableView beginUpdates];
+    [tableView endUpdates];
+    
+    /*if([collapse isEqualToString:@"true"])
     {
         collapse = @"false";
     }
@@ -208,12 +238,12 @@
             previousselectedcell = selectedcell;
             previousIndexpath = indexPath;
         }
-    }
+    }*/
     
     
-    InterestTableViewCell *cell = (InterestTableViewCell *) [tableView cellForRowAtIndexPath:indexPath];
     
-    selectedcell = row;
+    
+    //selectedcell = row;
 //    if([collapse isEqualToString:@"true"])
 //    {
 //        cell.ContainerView.hidden = NO;
@@ -226,27 +256,80 @@
 //        UIImage *image = [UIImage imageNamed: @"list_right_arrow.png"];
 //        [cell.image setImage:image];
 //    }
-    cell.ContainerView.hidden = NO;
-    UIImage *image = [UIImage imageNamed: @"list_down_arrow.png"];
-    [cell.image setImage:image];
+    
+    
    
     
-    [tableView beginUpdates];
-    [tableView endUpdates];
-    if(previousselectedcell == -1)
+    
+    /*if(previousselectedcell == -1)
     {
         previousselectedcell = selectedcell;
-    }
+    }*/
     
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+/*-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     InterestTableViewCell *cell = (InterestTableViewCell *) [tableView cellForRowAtIndexPath:indexPath];
-    cell.ContainerView.hidden = YES;
-    UIImage *image = [UIImage imageNamed: @"list_right_arrow.png"];
-    [cell.image setImage:image];
+    
+    if ([[self.isClickedArray objectAtIndex:indexPath.row] boolValue] == YES) {
+        [self.isClickedArray replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
+        cell.ContainerView.hidden = YES;
+        UIImage *image = [UIImage imageNamed: @"list_right_arrow.png"];
+        [cell.image setImage:image];
+    }
+    // Cell is CLOSED -> OPEN
+    else {
+        [self.isClickedArray replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
+        cell.ContainerView.hidden = NO;
+        UIImage *image = [UIImage imageNamed: @"list_down_arrow.png"];
+        [cell.image setImage:image];
+    }
 
+}*/
+
+- (IBAction)CheckAction:(UIButton *)sender
+{
+    NSString *keyvalue = [NSString stringWithFormat: @"%ld", (long)sender.tag];
+    UIImage *image;
+    
+    NSMutableDictionary *valuesDic = [dict objectForKey:@"VALUE"];
+    
+    
+    NSArray *allPossibleKeysArray = [valuesDic allKeys];
+    
+    for (int j=0; j<allPossibleKeysArray.count; j++) {
+        
+        NSString *keyStr = [allPossibleKeysArray objectAtIndex:j];
+        
+        NSArray *array = [valuesDic objectForKey:keyStr];
+        
+        for (int i=0; i<array.count; i++) {
+            
+            NSMutableDictionary *dictionary = [array objectAtIndex:i];
+            
+            NSString *keyString = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"key"]];
+            NSString *selectedString = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"selected"]];
+            
+            if([keyString isEqualToString:keyvalue]){
+                if([selectedString isEqualToString:@"0"])
+                {
+                    [dictionary removeObjectForKey:@"selected"];
+                    [dictionary setObject:[NSNumber numberWithBool:true] forKey:@"selected"];
+                    image = [UIImage imageNamed: @"check_box.png"];
+                    
+                }
+                else
+                {
+                    [dictionary removeObjectForKey:@"selected"];
+                    [dictionary setObject:[NSNumber numberWithBool:false] forKey:@"selected"];
+                    image = [UIImage imageNamed: @"uncheck_box.png"];
+                }
+                NSLog(@"dictionary = %@",dictionary);
+            }
+        }
+    }
+    NSLog(@"sender = %@",dict);
+    [sender setImage:image forState:normal];
 }
-
 
 @end
