@@ -24,5 +24,6 @@
 @property(weak,nonatomic) NSIndexPath *previousIndexpath;
 
 
+
 @end
 

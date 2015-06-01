@@ -137,8 +137,18 @@
                     yoffset = yoffset+40;
                 }
             }
+            UIImage *image;
+            NSString *sel = subcat[i][@"selected"];
+            NSLog(@"sel = %@",sel);
+            if(![sel boolValue])
+            {
+                image = [UIImage imageNamed: @"uncheck_box.png"];
+            }
+            else
+            {
+                image = [UIImage imageNamed: @"check_box.png"];
+            }
             
-            UIImage *image = [UIImage imageNamed: @"uncheck_box.png"];
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             //[button addTarget:self action:@selector(aMethod:) forControlEvents:UIControlEventTouchUpInside];
             [button setTitle:@"" forState:UIControlStateNormal];
