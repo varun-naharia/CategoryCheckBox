@@ -1,99 +1,174 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Items</key>
-	<array>
-		<dict>
-			<key>Name</key>
-			<string>Item 0</string>
-			<key>level</key>
-			<string>0</string>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>Item 1</string>
-			<key>level</key>
-			<integer>0</integer>
-			<key>SubItems</key>
-			<array>
-				<dict>
-					<key>Name</key>
-					<string>SubItem 0</string>
-					<key>level</key>
-					<integer>1</integer>
-				</dict>
-				<dict>
-					<key>Name</key>
-					<string>SubItem 1</string>
-					<key>level</key>
-					<integer>1</integer>
-				</dict>
-				<dict>
-					<key>Name</key>
-					<string>SubItem 2</string>
-					<key>level</key>
-					<string>1</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>Item 2</string>
-			<key>level</key>
-			<integer>0</integer>
-			<key>SubItems</key>
-			<array>
-				<dict>
-					<key>Name</key>
-					<string>SubItem 1</string>
-					<key>level</key>
-					<integer>1</integer>
-				</dict>
-				<dict>
-					<key>Name</key>
-					<string>SubItem 2</string>
-					<key>level</key>
-					<integer>1</integer>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>Item 3</string>
-			<key>level</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>Item 4</string>
-			<key>level</key>
-			<string>0</string>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>Item 5</string>
-			<key>level</key>
-			<string>0</string>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>Item 6</string>
-			<key>level</key>
-			<string>0</string>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>Item 7</string>
-			<key>level</key>
-			<string>0</string>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>Item 8</string>
-			<key>level</key>
-			<string>0</string>
-		</dict>
-	</array>
-</dict>
+    <dict>
+        <key>CODE</key>
+        <integer>200</integer>
+        <key>APICODERESULT</key>
+        <string>DUPLAY_USER_INTERESTS</string>
+        <key>MESSAGE</key>
+        <string>user interests fetched successfully</string>
+        <key>VALUE</key>
+        <dict>
+            <key>Books</key>
+            <array>
+                <dict>
+                    <key>key</key>
+                    <integer>7</integer>
+                    <key>value</key>
+                    <string>Fiction</string>
+                    <key>selected</key>
+                    <true/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>8</integer>
+                    <key>value</key>
+                    <string>Romantic</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+            </array>
+            <key>Cooking</key>
+            <array>
+                <dict>
+                    <key>key</key>
+                    <integer>15</integer>
+                    <key>value</key>
+                    <string>cooking fats</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>16</integer>
+                    <key>value</key>
+                    <string>cooking oil</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+            </array>
+            <key>Dance</key>
+            <array>
+                <dict>
+                    <key>key</key>
+                    <integer>23</integer>
+                    <key>value</key>
+                    <string>Belly dance</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>20</integer>
+                    <key>value</key>
+                    <string>Capoeira</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>21</integer>
+                    <key>value</key>
+                    <string>Country/ Western Dances</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>19</integer>
+                    <key>value</key>
+                    <string>East Coast Swing</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>22</integer>
+                    <key>value</key>
+                    <string>Folk Dance</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>18</integer>
+                    <key>value</key>
+                    <string>Jive</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+            </array>
+            <key>Music</key>
+            <array>
+                <dict>
+                    <key>key</key>
+                    <integer>11</integer>
+                    <key>value</key>
+                    <string>Classical</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>12</integer>
+                    <key>value</key>
+                    <string>Jazz</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>10</integer>
+                    <key>value</key>
+                    <string>Pop</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>13</integer>
+                    <key>value</key>
+                    <string>Western</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+            </array>
+            <key>Sports</key>
+            <array>
+                <dict>
+                    <key>key</key>
+                    <integer>5</integer>
+                    <key>value</key>
+                    <string>Badminton</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>3</integer>
+                    <key>value</key>
+                    <string>Basketball</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>4</integer>
+                    <key>value</key>
+                    <string>Cricket</string>
+                    <key>selected</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>key</key>
+                    <integer>2</integer>
+                    <key>value</key>
+                    <string>Hockey</string>
+                    <key>selected</key>
+                    <true/>
+                </dict>
+            </array>
+        </dict>
+    </dict>
 </plist>

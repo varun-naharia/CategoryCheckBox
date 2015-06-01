@@ -10,4 +10,13 @@
 
 @interface InterestTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *lblCategory;
+@property (weak, nonatomic) IBOutlet UILabel *lblSubCat1;
+@property (weak, nonatomic) IBOutlet UILabel *lblSubCat2;
+@property (weak, nonatomic) IBOutlet UIImageView *imgArrow;
+@property (weak, nonatomic) IBOutlet UIView *ContainerView;
+//@property (weak, nonatomic) IBOutlet UIButton *btnToggle;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+
+
 @end

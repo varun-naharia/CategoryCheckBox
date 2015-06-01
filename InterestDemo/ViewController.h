@@ -7,8 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InterestTableViewCell.h"
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@interface ViewController : UIViewController
+@property (nonatomic, retain) NSMutableArray *items;
+@property NSArray *fruits;
+@property (nonatomic, retain) NSMutableArray *itemsInTable;
+@property(nonatomic,retain)NSMutableDictionary *dict;
+@property(nonatomic,retain)NSMutableDictionary *cat;
+@property(nonatomic) int selectedcell;
+@property(nonatomic) int previousselectedcell;
+@property(nonatomic) NSString *collapse;
+//@property(nonatomic,strong) InterestTableViewCell *cell;
+//@property(nonatomic,retain)NSMutableDictionary *category;
+@property (weak, nonatomic) IBOutlet UITableView *Mytabelview;
+@property(weak,nonatomic) NSIndexPath *previousIndexpath;
 
 
 @end

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>25B2B7D1-BADC-4731-81A6-505178FFAE22</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0EFEC0E085243773A5B306615EF9B7BCD6319730</key>
+		<string>https://github.com/varun-naharia/InterestDemo.git</string>
+		<key>FD6EEED5F320D64DAE74639803497724F32630F8</key>
+		<string>https://bitbucket.org/varun_naharia/interestdemo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>InterestDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0EFEC0E085243773A5B306615EF9B7BCD6319730</key>
+		<string>../..InterestDemo/</string>
+		<key>FD6EEED5F320D64DAE74639803497724F32630F8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/varun_naharia/interestdemo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FD6EEED5F320D64DAE74639803497724F32630F8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FD6EEED5F320D64DAE74639803497724F32630F8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>InterestDemo</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0EFEC0E085243773A5B306615EF9B7BCD6319730</string>
+			<key>IDESourceControlWCCName</key>
+			<string>InterestDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

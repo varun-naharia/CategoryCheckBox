@@ -14,6 +14,13 @@
 		B39910F91B15A6A800417DEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B39910F81B15A6A800417DEA /* Images.xcassets */; };
 		B39910FC1B15A6A800417DEA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39910FA1B15A6A800417DEA /* LaunchScreen.xib */; };
 		B39911081B15A6A800417DEA /* InterestDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B39911071B15A6A800417DEA /* InterestDemoTests.m */; };
+		B39911121B15C0DF00417DEA /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B39911111B15C0DF00417DEA /* data.plist */; };
+		B39911151B15C4A700417DEA /* InterestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B39911141B15C4A700417DEA /* InterestTableViewCell.m */; };
+		B3C244CF1B15FAE200FBADC0 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C244CA1B15FAE200FBADC0 /* back_button.png */; };
+		B3C244D01B15FAE200FBADC0 /* check_box.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C244CB1B15FAE200FBADC0 /* check_box.png */; };
+		B3C244D11B15FAE200FBADC0 /* list_down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C244CC1B15FAE200FBADC0 /* list_down_arrow.png */; };
+		B3C244D21B15FAE200FBADC0 /* list_right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C244CD1B15FAE200FBADC0 /* list_right_arrow.png */; };
+		B3C244D31B15FAE200FBADC0 /* uncheck_box.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C244CE1B15FAE200FBADC0 /* uncheck_box.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,14 @@
 		B39911011B15A6A800417DEA /* InterestDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterestDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39911061B15A6A800417DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B39911071B15A6A800417DEA /* InterestDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterestDemoTests.m; sourceTree = "<group>"; };
+		B39911111B15C0DF00417DEA /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		B39911131B15C4A700417DEA /* InterestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InterestTableViewCell.h; path = Cell/InterestTableViewCell.h; sourceTree = "<group>"; };
+		B39911141B15C4A700417DEA /* InterestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InterestTableViewCell.m; path = Cell/InterestTableViewCell.m; sourceTree = "<group>"; };
+		B3C244CA1B15FAE200FBADC0 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
+		B3C244CB1B15FAE200FBADC0 /* check_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_box.png; sourceTree = "<group>"; };
+		B3C244CC1B15FAE200FBADC0 /* list_down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_down_arrow.png; sourceTree = "<group>"; };
+		B3C244CD1B15FAE200FBADC0 /* list_right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_right_arrow.png; sourceTree = "<group>"; };
+		B3C244CE1B15FAE200FBADC0 /* uncheck_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uncheck_box.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +78,11 @@
 		B39910DF1B15A6A800417DEA = {
 			isa = PBXGroup;
 			children = (
+				B3C244CA1B15FAE200FBADC0 /* back_button.png */,
+				B3C244CB1B15FAE200FBADC0 /* check_box.png */,
+				B3C244CC1B15FAE200FBADC0 /* list_down_arrow.png */,
+				B3C244CD1B15FAE200FBADC0 /* list_right_arrow.png */,
+				B3C244CE1B15FAE200FBADC0 /* uncheck_box.png */,
 				B39910EA1B15A6A800417DEA /* InterestDemo */,
 				B39911041B15A6A800417DEA /* InterestDemoTests */,
 				B39910E91B15A6A800417DEA /* Products */,
@@ -81,6 +101,7 @@
 		B39910EA1B15A6A800417DEA /* InterestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B39911161B15C4AD00417DEA /* Cell */,
 				B39910EF1B15A6A800417DEA /* AppDelegate.h */,
 				B39910F01B15A6A800417DEA /* AppDelegate.m */,
 				B39910F21B15A6A800417DEA /* ViewController.h */,
@@ -96,6 +117,7 @@
 		B39910EB1B15A6A800417DEA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B39911111B15C0DF00417DEA /* data.plist */,
 				B39910EC1B15A6A800417DEA /* Info.plist */,
 				B39910ED1B15A6A800417DEA /* main.m */,
 			);
@@ -117,6 +139,15 @@
 				B39911061B15A6A800417DEA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B39911161B15C4AD00417DEA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B39911131B15C4A700417DEA /* InterestTableViewCell.h */,
+				B39911141B15C4A700417DEA /* InterestTableViewCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +230,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C244D31B15FAE200FBADC0 /* uncheck_box.png in Resources */,
 				B39910F71B15A6A800417DEA /* Main.storyboard in Resources */,
+				B3C244CF1B15FAE200FBADC0 /* back_button.png in Resources */,
 				B39910FC1B15A6A800417DEA /* LaunchScreen.xib in Resources */,
+				B3C244D21B15FAE200FBADC0 /* list_right_arrow.png in Resources */,
+				B39911121B15C0DF00417DEA /* data.plist in Resources */,
+				B3C244D11B15FAE200FBADC0 /* list_down_arrow.png in Resources */,
 				B39910F91B15A6A800417DEA /* Images.xcassets in Resources */,
+				B3C244D01B15FAE200FBADC0 /* check_box.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +259,7 @@
 				B39910F41B15A6A800417DEA /* ViewController.m in Sources */,
 				B39910F11B15A6A800417DEA /* AppDelegate.m in Sources */,
 				B39910EE1B15A6A800417DEA /* main.m in Sources */,
+				B39911151B15C4A700417DEA /* InterestTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +456,7 @@
 				B399110D1B15A6A800417DEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B399110E1B15A6A800417DEA /* Build configuration list for PBXNativeTarget "InterestDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +465,7 @@
 				B39911101B15A6A800417DEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
