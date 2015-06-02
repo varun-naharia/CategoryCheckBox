@@ -110,7 +110,7 @@
         id aKey = [keys objectAtIndex:indexPath.row];
         ///id anObject = [dict objectForKey:aKey];
         subcat = [cat objectForKey:aKey];
-        cell.btnGroupTap.tag = indexPath.row;
+        cell.btnGroupTap.tag = indexPath.row+10000;
         NSArray *count=(NSArray *)subcat;
         //NSDictionary *subcat =  cat;
         //NSLog(@"Total subcat = %lu\n subcat =%@\n",(unsigned long)count.count,subcat);
@@ -185,7 +185,7 @@
             
             CGRect screenRect = [[UIScreen mainScreen] bounds];
             CGFloat screenWidth = screenRect.size.width;
-            CGFloat screenHeight = screenRect.size.height;
+            //CGFloat screenHeight = screenRect.size.height;
             //float buttonWidth = (((screenHeight-screenWidth)/8));
             
             //NSLog(@"window width = %f\n height=%f\n buttonWidth = %f",screenWidth,screenHeight,buttonWidth);
@@ -330,6 +330,7 @@
         
         NSArray *array = [valuesDic objectForKey:keyStr];
         NSInteger indexPath = j;
+        NSInteger ButtonTag = j+10000;
         
         for (int i=0; i<array.count; i++) {
             
@@ -351,18 +352,18 @@
                     if ([[isGroupCheckedArray objectAtIndex:indexPath] boolValue] == YES) {
                         [isGroupCheckedArray replaceObjectAtIndex:indexPath withObject:[NSNumber numberWithBool:NO]];
                         UIImage *image = [UIImage imageNamed: @"uncheck_box.png"];
-                        UIButton *btn = (UIButton*)[self.view viewWithTag:indexPath];
+                        UIButton *btn = (UIButton*)[self.view viewWithTag:ButtonTag];
                         NSLog(@"%@",btn);
                         [btn setBackgroundImage:image forState:UIControlStateNormal];
                         
                     }
                     // Cell is Unchecked -> Checked
-                    else {
+                    /*else {
                         [isGroupCheckedArray replaceObjectAtIndex:indexPath withObject:[NSNumber numberWithBool:YES]];
                         UIImage *image = [UIImage imageNamed: @"check_box.png"];
-                        UIButton *btn = (UIButton*)[self.view viewWithTag:indexPath];
+                        UIButton *btn = (UIButton*)[self.view viewWithTag:ButtonTag];
                         [btn setBackgroundImage:image forState:UIControlStateNormal];
-                    }
+                    }*/
                     
                     [dictionary removeObjectForKey:@"selected"];
                     [dictionary setObject:[NSNumber numberWithBool:false] forKey:@"selected"];
@@ -385,15 +386,16 @@
 }
 - (IBAction)GroupTap:(id)sender {
     NSLog(@"%ld",(long)[sender tag]);
+    NSInteger indexPath = [sender tag]-10000;
     // Button is Checked -> Unchecked
-    if ([[isGroupCheckedArray objectAtIndex:[sender tag]] boolValue] == YES) {
-        [isGroupCheckedArray replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:NO]];
+    if ([[isGroupCheckedArray objectAtIndex:indexPath] boolValue] == YES) {
+        [isGroupCheckedArray replaceObjectAtIndex:indexPath withObject:[NSNumber numberWithBool:NO]];
         UIImage *image = [UIImage imageNamed: @"uncheck_box.png"];
         [sender setBackgroundImage:image forState:normal];
     }
     // Cell is Unchecked -> Checked
     else {
-        [isGroupCheckedArray replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:YES]];
+        [isGroupCheckedArray replaceObjectAtIndex:indexPath withObject:[NSNumber numberWithBool:YES]];
         UIImage *image = [UIImage imageNamed: @"check_box.png"];
         [sender setBackgroundImage:image forState:normal];
     }
@@ -406,7 +408,7 @@
     NSArray *allPossibleKeysArray = [valuesDic allKeys];
     for (int j=0; j<allPossibleKeysArray.count; j++) {
         NSString *keyStr = [allPossibleKeysArray objectAtIndex:j];
-        if(j==[sender tag])
+        if(j==indexPath)
         {
             NSLog(@"%@",keyStr);
             NSArray *array = [valuesDic objectForKey:keyStr];
@@ -419,7 +421,7 @@
                         [dictionary removeObjectForKey:@"selected"];
                         [dictionary setObject:[NSNumber numberWithBool:true] forKey:@"selected"];
                        // NSLog(@"%ld is not selected",(long)selectedKey);
-                         if ([[isGroupCheckedArray objectAtIndex:[sender tag]] boolValue] == YES)
+                         if ([[isGroupCheckedArray objectAtIndex:indexPath] boolValue] == YES)
                          {
                             image = [UIImage imageNamed: @"checked.png"];
                             UIButton *btn = (UIButton*)[self.view viewWithTag:selectedKey];
@@ -439,7 +441,7 @@
                         [dictionary setObject:[NSNumber numberWithBool:false] forKey:@"selected"];
                         image = [UIImage imageNamed: @"unchecked.png"];
                         //NSLog(@"%ld is not selected",(long)selectedKey);
-                        if ([[isGroupCheckedArray objectAtIndex:[sender tag]] boolValue] == YES)
+                        if ([[isGroupCheckedArray objectAtIndex:indexPath] boolValue] == YES)
                         {
                             image = [UIImage imageNamed: @"checked.png"];
                             UIButton *btn = (UIButton*)[self.view viewWithTag:selectedKey];
