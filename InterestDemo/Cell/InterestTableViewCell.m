@@ -9,7 +9,7 @@
 #import "InterestTableViewCell.h"
 
 @implementation InterestTableViewCell
-@synthesize lblCategory,ContainerView;
+@synthesize lblCategory,ContainerView,btnGroupTap;
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -19,6 +19,15 @@
 
     // Configure the view for the selected state
 }
+/*- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    BOOL pointInside = [super pointInside:point withEvent:event];
+    
+    if (pointInside && ![self.ContainerView pointInside:[self convertPoint:point toView:self.ContainerView] withEvent:event]) {
+        return YES;
+    }
+    
+    return NO;
+}*/
 
 
 @end

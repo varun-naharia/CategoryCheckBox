@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *Mytabelview;
 @property(weak,nonatomic) NSIndexPath *previousIndexpath;
 @property (nonatomic, retain) NSMutableArray *isClickedArray;
+@property (nonatomic, retain) NSMutableArray *isGroupCheckedArray;
 
 
 @end

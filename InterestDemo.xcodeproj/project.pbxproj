@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30BDED61B1DA72C00472D8C /* h_line.png in Resources */ = {isa = PBXBuildFile; fileRef = B30BDED51B1DA72C00472D8C /* h_line.png */; };
+		B30BDED91B1DAC9F00472D8C /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = B30BDED71B1DAC9F00472D8C /* checked.png */; };
+		B30BDEDA1B1DAC9F00472D8C /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = B30BDED81B1DAC9F00472D8C /* unchecked.png */; };
 		B39910EE1B15A6A800417DEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B39910ED1B15A6A800417DEA /* main.m */; };
 		B39910F11B15A6A800417DEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B39910F01B15A6A800417DEA /* AppDelegate.m */; };
 		B39910F41B15A6A800417DEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39910F31B15A6A800417DEA /* ViewController.m */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B30BDED51B1DA72C00472D8C /* h_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = h_line.png; sourceTree = "<group>"; };
+		B30BDED71B1DAC9F00472D8C /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		B30BDED81B1DAC9F00472D8C /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
 		B39910E81B15A6A800417DEA /* InterestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39910EC1B15A6A800417DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B39910ED1B15A6A800417DEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 		B39910DF1B15A6A800417DEA = {
 			isa = PBXGroup;
 			children = (
+				B30BDED51B1DA72C00472D8C /* h_line.png */,
+				B30BDED71B1DAC9F00472D8C /* checked.png */,
+				B30BDED81B1DAC9F00472D8C /* unchecked.png */,
 				B3C244CA1B15FAE200FBADC0 /* back_button.png */,
 				B3C244CB1B15FAE200FBADC0 /* check_box.png */,
 				B3C244CC1B15FAE200FBADC0 /* list_down_arrow.png */,
@@ -236,8 +245,11 @@
 				B39910FC1B15A6A800417DEA /* LaunchScreen.xib in Resources */,
 				B3C244D21B15FAE200FBADC0 /* list_right_arrow.png in Resources */,
 				B39911121B15C0DF00417DEA /* data.plist in Resources */,
+				B30BDED61B1DA72C00472D8C /* h_line.png in Resources */,
+				B30BDED91B1DAC9F00472D8C /* checked.png in Resources */,
 				B3C244D11B15FAE200FBADC0 /* list_down_arrow.png in Resources */,
 				B39910F91B15A6A800417DEA /* Images.xcassets in Resources */,
+				B30BDEDA1B1DAC9F00472D8C /* unchecked.png in Resources */,
 				B3C244D01B15FAE200FBADC0 /* check_box.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

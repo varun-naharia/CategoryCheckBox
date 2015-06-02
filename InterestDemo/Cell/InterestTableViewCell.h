@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *ContainerView;
 //@property (weak, nonatomic) IBOutlet UIButton *btnToggle;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIButton *btnGroupTap;
 
 
 @end
